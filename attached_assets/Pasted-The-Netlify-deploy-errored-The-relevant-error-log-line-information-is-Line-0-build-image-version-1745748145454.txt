@@ -1,0 +1,35 @@
+The Netlify deploy errored. The relevant error log line information is:
+
+Line 0: build-image version: a40b0edf29b13e2c3f0580ec07565679cdb6f371 (noble)
+Line 1: buildbot version: a40b0edf29b13e2c3f0580ec07565679cdb6f371
+Line 2: Fetching cached dependencies
+Line 3: Starting to download cache of 483.9MB
+Line 4: Finished downloading cache in 1.452s
+Line 5: Starting to extract cache
+Line 6: Finished extracting cache in 4.691s
+Line 7: Finished fetching cache in 6.208s
+Line 8: Starting to prepare the repo for build
+Line 9: Preparing Git Reference refs/heads/main
+Line 10: Failed during stage 'Reading and parsing configuration files': 
+When resolving config file /opt/build/repo/netlify.toml:
+Could n
+Line 11: Failing build: Failed to parse configuration
+Line 12: Finished processing build request in 8.064s
+
+Netlify has analyzed the error and provided the following guidance:
+
+**Diagnosis:** The build is failing due to an error in parsing the Netlify configuration file (netlify.toml).
+
+**Solution:**
+1. Verify that the `netlify.toml` file in the root of the project is correctly formatted and does not contain any syntax errors.
+2. Ensure that the file is correctly named `netlify.toml` with no typos or file extension issues.
+3. If any recent changes were made to the `netlify.toml` file, revert them and check if the build succeeds.
+4. Double-check the contents of the `netlify.toml` file against the Netlify configuration documentation to ensure it adheres to the correct structure.
+
+If the issue persists:
+- Review the [Netlify Configuration File documentation](https://docs.netlify.com/configure-builds/file-based-configuration/) to understand the correct format.
+- Inspect the `netlify.toml` file for any syntax errors or missing required fields.
+- If using any specific directives or plugins in the `netlify.toml` file, ensure they are correctly configured.
+- Consider creating a new `netlify.toml` file from scratch based on the documentation.
+
+If the build continues to fail, further investigation into the specific content of the `netlify.toml` file may be necessary.
