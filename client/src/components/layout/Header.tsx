@@ -51,8 +51,8 @@ const Header = () => {
               <svg className="h-8 w-8 text-primary" fill="currentColor" viewBox="0 0 24 24">
                 <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 16.5v-2c0-.28.22-.5.5-.5s.5.22.5.5v2c0 .28-.22.5-.5.5s-.5-.22-.5-.5zm1-12c2.76 0 5 2.24 5 5 0 2.24-1.38 4.14-3.34 4.91-.18.08-.36-.04-.36-.23v-1.04c1.06-.42 1.82-1.46 1.82-2.67 0-1.59-1.29-2.87-2.87-2.87S9.38 9.88 9.38 11.47c0 1.21.76 2.25 1.82 2.67v1.04c0 .19-.18.31-.36.23-1.96-.77-3.34-2.67-3.34-4.91 0-2.76 2.24-5 5-5z" />
               </svg>
-              <Link href="/">
-                <span className="ml-2 text-xl font-semibold text-gray-900 cursor-pointer">ModderAuth</span>
+              <Link href="/" className="ml-2 text-xl font-semibold text-gray-900 cursor-pointer">
+                ModderAuth
               </Link>
             </div>
             <div className="hidden sm:ml-6 sm:flex sm:space-x-8">
@@ -73,8 +73,8 @@ const Header = () => {
           <div className="hidden sm:ml-6 sm:flex sm:items-center">
             {!isLoading && user ? (
               <div className="flex items-center space-x-4">
-                <Link href="/dashboard">
-                  <span className="inline-block"><Button className="bg-primary text-white hover:bg-blue-700">Dashboard</Button></span>
+                <Link href="/dashboard" className="inline-block">
+                  <Button className="bg-primary text-white hover:bg-blue-700">Dashboard</Button>
                 </Link>
                 <Button variant="outline" onClick={handleLogout}>Logout</Button>
               </div>
