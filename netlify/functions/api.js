@@ -32,6 +32,12 @@ app.use(session({
 const supabaseUrl = process.env.SUPABASE_URL || 'https://gisqgjbgbqrassitzjla.supabase.co';
 const supabaseKey = process.env.SUPABASE_KEY || 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Imdpc3FnamJnYnFyYXNzaXR6amxhIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NDU3NDQ0NTEsImV4cCI6MjA2MTMyMDQ1MX0.FqGUfKv39nr3f3aXoxNHQ9biJzoYkexzlrskY5aC5_M';
 
+// Log the environment variables for debugging
+console.log('Environment variables:');
+console.log('NODE_ENV:', process.env.NODE_ENV);
+console.log('SUPABASE_URL:', supabaseUrl);
+console.log('SUPABASE_KEY:', supabaseKey ? 'Exists (not showing for security)' : 'Missing');
+
 console.log('Initializing Supabase client with URL:', supabaseUrl);
 const supabase = createClient(supabaseUrl, supabaseKey);
 
