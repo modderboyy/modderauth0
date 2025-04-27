@@ -1,3 +1,4 @@
+// Import required modules with CommonJS imports
 const express = require('express');
 const serverless = require('serverless-http');
 const cors = require('cors');
@@ -27,10 +28,11 @@ app.use(session({
 }));
 
 // Supabase client
-const supabase = createClient(
-  process.env.SUPABASE_URL,
-  process.env.SUPABASE_KEY
-);
+const supabaseUrl = process.env.SUPABASE_URL || 'https://gisqgjbgbqrassitzjla.supabase.co';
+const supabaseKey = process.env.SUPABASE_KEY || 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Imdpc3FnamJnYnFyYXNzaXR6amxhIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NDU3NDQ0NTEsImV4cCI6MjA2MTMyMDQ1MX0.FqGUfKv39nr3f3aXoxNHQ9biJzoYkexzlrskY5aC5_M';
+
+console.log('Initializing Supabase client with URL:', supabaseUrl);
+const supabase = createClient(supabaseUrl, supabaseKey);
 
 // Database tables
 const TABLES = {

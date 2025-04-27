@@ -1,12 +1,22 @@
 [build]
   command = "npm run build"
-  publish = "dist"
+  publish = "dist/public"
   functions = "netlify/functions"
+  
+  # Environment variables
+  environment = { NODE_VERSION = "18.12.1" }
+
+[build.environment]
+  NPM_FLAGS = "--legacy-peer-deps"
 
 [dev]
   command = "npm run dev"
   port = 5000
+  targetPort = 5000
+  framework = "#custom"
 
+# These redirects ensure that all API requests go to our Netlify functions
+# and SPA routes are handled by the frontend router
 [[redirects]]
   from = "/api/*"
   to = "/.netlify/functions/api/:splat"
@@ -17,7 +27,14 @@
   to = "/.netlify/functions/api/oauth/:splat"
   status = 200
 
+# This redirect is critical for SPA to work correctly
 [[redirects]]
   from = "/*"
   to = "/index.html"
   status = 200
+  force = true
+
+[functions]
+  # Increase function timeout
+  node_bundler = "esbuild"
+  included_files = ["netlify/functions/package.json"]

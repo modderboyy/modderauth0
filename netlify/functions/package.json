@@ -1,0 +1,15 @@
+{
+  "name": "modderauth-netlify-functions",
+  "version": "1.0.0",
+  "description": "Netlify Functions for ModderAuth",
+  "main": "api.js",
+  "dependencies": {
+    "express": "^4.21.2",
+    "serverless-http": "^3.2.0",
+    "cors": "^2.8.5",
+    "body-parser": "^2.2.0",
+    "jsonwebtoken": "^9.0.2",
+    "express-session": "^1.18.1",
+    "@supabase/supabase-js": "^2.49.4"
+  }
+}
