@@ -56,15 +56,11 @@ const Header = () => {
               </Link>
             </div>
             <div className="hidden sm:ml-6 sm:flex sm:space-x-8">
-              <Link href="/">
-                <a className={`${isActive("/")} inline-flex items-center px-1 pt-1 border-b-2 text-sm font-medium`}>
-                  Home
-                </a>
+              <Link href="/" className={`${isActive("/")} inline-flex items-center px-1 pt-1 border-b-2 text-sm font-medium`}>
+                Home
               </Link>
-              <Link href="/docs">
-                <a className={`${isActive("/docs")} inline-flex items-center px-1 pt-1 border-b-2 text-sm font-medium`}>
-                  Docs
-                </a>
+              <Link href="/docs" className={`${isActive("/docs")} inline-flex items-center px-1 pt-1 border-b-2 text-sm font-medium`}>
+                Docs
               </Link>
               <a href="#" className="border-transparent text-gray-500 hover:border-gray-300 hover:text-gray-700 inline-flex items-center px-1 pt-1 border-b-2 text-sm font-medium">
                 API
@@ -78,17 +74,17 @@ const Header = () => {
             {!isLoading && user ? (
               <div className="flex items-center space-x-4">
                 <Link href="/dashboard">
-                  <Button className="bg-primary text-white hover:bg-blue-700">Dashboard</Button>
+                  <span className="inline-block"><Button className="bg-primary text-white hover:bg-blue-700">Dashboard</Button></span>
                 </Link>
                 <Button variant="outline" onClick={handleLogout}>Logout</Button>
               </div>
             ) : (
               <div className="flex items-center space-x-4">
                 <Link href="/login">
-                  <Button variant="outline">Login</Button>
+                  <span className="inline-block"><Button variant="outline">Login</Button></span>
                 </Link>
                 <Link href="/register">
-                  <Button className="bg-primary text-white hover:bg-blue-700">Sign Up</Button>
+                  <span className="inline-block"><Button className="bg-primary text-white hover:bg-blue-700">Sign Up</Button></span>
                 </Link>
               </div>
             )}
