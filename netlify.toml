@@ -4,28 +4,33 @@
   functions = "netlify/functions"
 
 [build.environment]
-  NODE_VERSION = "18.12.1"
+  NODE_VERSION = "18.x"
   NPM_FLAGS = "--legacy-peer-deps"
 
 [dev]
   command = "npm run dev"
   port = 3000
+  framework = "nextjs"
 
+# Proxy API requests to the serverless function
 [[redirects]]
   from = "/api/*"
   to = "/.netlify/functions/api/:splat"
   status = 200
 
+# Proxy OAuth requests to the serverless function
 [[redirects]]
   from = "/oauth/*"
   to = "/.netlify/functions/api/oauth/:splat"
   status = 200
 
+# For all other routes, let Next.js handle them
 [[redirects]]
   from = "/*"
-  to = "/index.html"
+  to = "/.netlify/builders/index"
   status = 200
-  force = true
 
 [functions]
   node_bundler = "esbuild"
+  included_files = ["server/**", "shared/**"]
+  external_node_modules = ["express"]

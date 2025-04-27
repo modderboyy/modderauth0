@@ -7,6 +7,7 @@ const bodyParser = require('body-parser');
 const jwt = require('jsonwebtoken');
 const session = require('express-session');
 const crypto = require('crypto');
+const path = require('path');
 
 // Initialize Express app
 const app = express();
