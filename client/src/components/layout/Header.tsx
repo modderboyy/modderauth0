@@ -80,11 +80,11 @@ const Header = () => {
               </div>
             ) : (
               <div className="flex items-center space-x-4">
-                <Link href="/login">
-                  <span className="inline-block"><Button variant="outline">Login</Button></span>
+                <Link href="/login" className="inline-block">
+                  <Button variant="outline">Login</Button>
                 </Link>
-                <Link href="/register">
-                  <span className="inline-block"><Button className="bg-primary text-white hover:bg-blue-700">Sign Up</Button></span>
+                <Link href="/register" className="inline-block">
+                  <Button className="bg-primary text-white hover:bg-blue-700">Sign Up</Button>
                 </Link>
               </div>
             )}
