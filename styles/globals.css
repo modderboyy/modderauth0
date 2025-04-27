@@ -1,0 +1,132 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+ 
+@layer base {
+  :root {
+    --background: 0 0% 100%;
+    --foreground: 224 71.4% 4.1%;
+    --card: 0 0% 100%;
+    --card-foreground: 224 71.4% 4.1%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 224 71.4% 4.1%;
+    --primary: 221.2 83.2% 53.3%;
+    --primary-foreground: 210 20% 98%;
+    --secondary: 220 14.3% 95.9%;
+    --secondary-foreground: 220.9 39.3% 11%;
+    --muted: 220 14.3% 95.9%;
+    --muted-foreground: 220 8.9% 46.1%;
+    --accent: 220 14.3% 95.9%;
+    --accent-foreground: 220.9 39.3% 11%;
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 210 20% 98%;
+    --border: 220 13% 91%;
+    --input: 220 13% 91%;
+    --ring: 221.2 83.2% 53.3%;
+    --radius: 0.5rem;
+  }
+ 
+  .dark {
+    --background: 224 71.4% 4.1%;
+    --foreground: 210 20% 98%;
+    --card: 224 71.4% 4.1%;
+    --card-foreground: 210 20% 98%;
+    --popover: 224 71.4% 4.1%;
+    --popover-foreground: 210 20% 98%;
+    --primary: 217.2 91.2% 59.8%;
+    --primary-foreground: 210 20% 98%;
+    --secondary: 215 27.9% 16.9%;
+    --secondary-foreground: 210 20% 98%;
+    --muted: 215 27.9% 16.9%;
+    --muted-foreground: 217.9 10.6% 64.9%;
+    --accent: 215 27.9% 16.9%;
+    --accent-foreground: 210 20% 98%;
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 210 20% 98%;
+    --border: 215 27.9% 16.9%;
+    --input: 215 27.9% 16.9%;
+    --ring: 224.3 76.3% 48%;
+  }
+}
+ 
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+    font-feature-settings: "rlig" 1, "calt" 1;
+  }
+  
+  h1 {
+    @apply text-3xl md:text-4xl font-bold tracking-tight;
+  }
+  
+  h2 {
+    @apply text-2xl md:text-3xl font-semibold tracking-tight;
+  }
+  
+  h3 {
+    @apply text-xl md:text-2xl font-semibold tracking-tight;
+  }
+  
+  h4 {
+    @apply text-lg md:text-xl font-semibold tracking-tight;
+  }
+}
+
+/* Custom styles for code blocks */
+pre {
+  @apply p-4 rounded-lg bg-slate-900 text-gray-100 overflow-x-auto;
+}
+
+code {
+  @apply font-mono text-sm;
+}
+
+.code-lang-tab {
+  @apply px-3 py-2 text-sm font-medium cursor-pointer;
+}
+
+.code-lang-tab.active {
+  @apply bg-primary/10 text-primary;
+}
+
+/* Gradient text for marketing sections */
+.gradient-text {
+  @apply bg-clip-text text-transparent bg-gradient-to-r from-primary to-blue-500;
+}
+
+/* Card hover effects */
+.feature-card {
+  @apply transition-all duration-300 hover:shadow-lg hover:-translate-y-1;
+}
+
+/* Custom animations */
+.fade-in {
+  animation: fadeIn 0.5s ease-in-out;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+/* Hero section spotlight effect */
+.spotlight {
+  @apply absolute inset-0 pointer-events-none bg-gradient-to-r from-primary/20 via-transparent to-primary/20 mix-blend-overlay;
+  mask-image: radial-gradient(circle, black, transparent 60%);
+}
+
+/* Documentation sidebar styling */
+.docs-sidebar {
+  @apply border-r border-border py-6 pr-4 sticky top-20 self-start max-h-[calc(100vh-5rem)] overflow-y-auto;
+}
+
+.docs-sidebar-item {
+  @apply py-1 px-2 text-sm hover:bg-secondary/50 rounded-md transition-colors;
+}
+
+.docs-sidebar-item.active {
+  @apply bg-primary/10 text-primary font-medium;
+}
