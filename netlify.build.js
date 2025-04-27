@@ -112,6 +112,21 @@ const indexHtml = `
           <h3 class="text-xl font-semibold mb-2">Multiple SDKs</h3>
           <p class="text-gray-600 dark:text-gray-300">Client libraries for JavaScript, Python, Java, C#, Go, Ruby, PHP, and more.</p>
         </div>
+        <div class="feature-card bg-white dark:bg-gray-700 rounded-xl p-6 shadow-sm">
+          <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-blue-600 mb-4"><path d="M20 16V7a2 2 0 0 0-2-2H6a2 2 0 0 0-2 2v9m16 0a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2m16 0V5a2 2 0 0 0-2-2H6a2 2 0 0 0-2 2v11"></path></svg>
+          <h3 class="text-xl font-semibold mb-2">Supabase Integration</h3>
+          <p class="text-gray-600 dark:text-gray-300">Seamless integration with Supabase for secure and scalable user data storage and authentication management.</p>
+        </div>
+        <div class="feature-card bg-white dark:bg-gray-700 rounded-xl p-6 shadow-sm">
+          <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-blue-600 mb-4"><path d="M12 3H5a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"></path><path d="M18.375 2.625a2.121 2.121 0 1 1 3 3L12 15l-4 1 1-4Z"></path></svg>
+          <h3 class="text-xl font-semibold mb-2">Customizable UI</h3>
+          <p class="text-gray-600 dark:text-gray-300">Beautiful, responsive login and registration screens that can be fully customized to match your brand.</p>
+        </div>
+        <div class="feature-card bg-white dark:bg-gray-700 rounded-xl p-6 shadow-sm">
+          <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-blue-600 mb-4"><path d="M22 12h-4l-3 9L9 3l-3 9H2"></path></svg>
+          <h3 class="text-xl font-semibold mb-2">Analytics & Monitoring</h3>
+          <p class="text-gray-600 dark:text-gray-300">Track login attempts, success rates, and other key metrics with the built-in analytics dashboard.</p>
+        </div>
       </div>
     </div>
   </section>
